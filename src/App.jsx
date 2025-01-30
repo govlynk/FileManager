@@ -7,14 +7,13 @@ import theme from "./theme";
 import Layout from "./components/storage/Layout";
 import FileManager from "./screens/FileManager";
 import "@aws-amplify/ui-react/styles.css";
+import outputs from "../amplify_outputs.json";
 
 export default function App() {
 	const [isAuthorized, setIsAuthorized] = useState(false);
 
 	useEffect(() => {
-		Amplify.configure({
-			// Your Amplify configuration will be injected here
-		});
+		Amplify.configure(outputs);
 	}, []);
 
 	return (
